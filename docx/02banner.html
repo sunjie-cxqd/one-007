@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,figure {
+            margin:0;
+        }
+        img {
+            width: 100%;
+            height: 650px;
+        }
+
+        figcaption {
+            display: block;
+            font-weight: bold;
+            padding:1em 0;
+        }
+        .gallery {
+            position: relative;
+        }
+
+        .gallery > .item {
+            opacity: 0;
+            position: absolute;
+            left:0;
+            top:0;
+            width: 100%;
+            text-align: center;
+            transition: opacity 0.5s;
+        }
+
+        .gallery > .item:first-of-type {
+            position: static;
+            opacity: 1;
+        }
+        .gallery > .controls {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .gallery > .control-operator {
+            display: none;
+        }
+
+        .gallery .controls-button {
+            display: inline-block;
+            margin:0 0.2rem;
+            font-size:3rem;
+            text-align: center;
+            text-decoration: none;
+            transition: color  0.1s;
+        }
+
+        .gallery > .control-operator:target ~ .item {
+            opacity: 0;
+        }
+
+        .gallery > .control-operator:nth-of-type(1):target ~ .item:nth-of-type(1) {
+            opacity: 1;
+        }
+
+        .gallery > .control-operator:nth-of-type(2):target ~ .item:nth-of-type(2) {
+            opacity: 1;
+        }
+
+        .gallery > .control-operator:nth-of-type(3):target ~ .item:nth-of-type(3) {
+            opacity: 1;
+        }
+
+
+        .gallery .controls-button {
+            color: rgba(255,255,255,.4);
+        }
+
+        .gallery .controls-button:hover {
+            color:rgba(255,255,255,.8);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <!--control-operator  用它来当做控件 不显示在网页中-->
+        <div id="gallery-1" class="control-operator"></div>
+        <div id="gallery-2" class="control-operator"></div>
+        <div id="gallery-3" class="control-operator"></div>
+
+        <figure class="item">
+            <figcaption>壁纸1</figcaption>
+            <img src="./images/b1.jpg" alt="">
+        </figure>
+
+        <figure class="item">
+            <figcaption>壁纸2</figcaption>
+            <img src="./images/b2.jpg" alt="">
+        </figure>
+
+        <figure class="item">
+            <figcaption>壁纸3</figcaption>
+            <img src="./images/b3.jpg" alt="">
+        </figure>
+        
+        
+        <div class="controls">
+            <a href="#gallery-1" class="controls-button">O</a>
+            <a href="#gallery-2" class="controls-button">O</a>
+            <a href="#gallery-3" class="controls-button">O</a>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

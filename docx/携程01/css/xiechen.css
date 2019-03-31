@@ -1,0 +1,26 @@
+*{ 
+     margin:0;
+     padding:0;
+}
+.box{
+	width:1194px;
+	height:306px;
+	margin:0 auto;
+	overflow:hidden;
+}
+.box a{ float:left;
+       width:143px;
+	   }
+.box a p{ width:137px;
+         overflow:hidden;
+		   }
+.box a p img{
+	width:330px;
+	height:306px;
+}
+.box:hover a:hover{ 
+        width:336px
+      }
+.box:hover a:hover p{
+     	width:330px;
+              }

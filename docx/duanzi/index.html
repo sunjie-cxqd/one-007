@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transition</title>
+	<style>
+		.box{
+			/*background:url(img/bg.jpg)repeat;*/
+			height: 800px;
+			padding:40px 100px;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.one{
+			width: 500px;
+			height: 390px;
+			padding:30px;
+			display: flex;
+			background:url(img/bg.jpg)repeat;
+			justify-content: space-around;
+		}
+		.rg,.le{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		.le {
+			width: 288px;
+			height: 390px;
+			transition: 2s;
+		}
+		.le img.big,.big1{
+			width: 446px;
+			height: 350px;
+			transition: 2s;
+		}
+		.le img.big1{
+			height: 320px;
+		}
+		img.small{
+			opacity: 0;
+			transition: 2s;
+		}
+		.bo{
+			display: flex;
+			justify-content: space-between;
+			transition: 2s;
+		}
+		.one:hover .big{
+			transform: scale(0.64,0.78);
+			transform-origin: left top;
+		}
+		.one:hover img.small{
+			opacity: 1;
+		}
+		.one:hover img.big1{
+			transform: scale(0.64,1.22);
+			transform-origin: left top;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="one">
+			<div class="le">
+				<img src="img/con1-1.jpg" alt="随便" class="big">
+				<div class="bo">
+					<img src="img/con1-6.jpg" alt="火" class="small">
+					<img src="img/con1-5.jpg" alt="皮" class="small">
+				</div>
+			</div>
+			<div class="rg">
+				<img src="img/con1-2.jpg" alt="live" class="small">
+				<img src="img/con1-3.jpg" alt="money" class="small">
+				<img src="img/con1-4.jpg"  alt="愁" class="small">
+			</div>
+		</div>
+		<div class="one">
+			<div class="le">
+				<img src="img/con2-1.jpg" alt="随便" class="big">
+				<div class="bo">
+					<img src="img/con2-6.jpg" alt="火" class="small">
+					<img src="img/con2-5.jpg" alt="皮" class="small">
+				</div>
+			</div>
+			<div class="rg">
+				<img src="img/con2-2.jpg" alt="live" class="small">
+				<img src="img/con2-3.jpg"alt="money" class="small">
+				<img src="img/con2-4.jpg" alt="愁" class="small">
+			</div>
+		</div>
+		<div class="one">
+			<div class="le">
+				<img src="img/con3-1.jpg" alt="随便" class="big">
+				<div class="bo">
+					<img src="img/con3-6.jpg" alt="火" class="small">
+					<img src="img/con3-5.jpg" alt="皮" class="small">
+				</div>
+			</div>
+			<div class="rg">
+				<img src="img/con3-2.jpg"alt="live" class="small">
+				<img src="img/con3-3.jpg" alt="money" class="small">
+				<img src="img/con3-4.jpg" alt="愁" class="small">
+			</div>
+		</div>
+		<div class="one">
+			<div class="le">
+				<img src="img/con4-1.jpg" alt="随便" class="big1">
+			</div>
+			<div class="rg">
+				<img src="img/con4-2.jpg" alt="live" class="small">
+				<img src="img/con4-3.jpg" alt="money" class="small">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

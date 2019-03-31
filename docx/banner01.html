@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>banner</title>
+    <style>
+        /*
+            绑定label和input
+            分别在label内和input外引入图片
+            设置父元素和子元素的基本样式
+            调整大图和小图
+        */
+        /*
+            1. 设置大图片的宽度高度，并且设置定位，让几张大图片重叠在一起，并且把大图片放大1.1倍，并且隐藏
+            2. 因为我们将label和input 进行了绑定，而label当中的是小图片，当我们点击小图片的时候，相当于选中了input，我们在input被选中
+            的时候，操作大图片，将大图片放大倍数为1，并且透明度为1，那么此时大图片将会显示出来
+            3.
+        */
+        #content {
+            width: 800px;
+            margin:30px auto;
+            position: relative;
+        }
+
+        input[type="radio"]{
+            display: none;
+        }
+        input[type="radio"]~img {
+            width: 800px;
+            height: 500px;
+            position: absolute;
+            top:0;
+            left:0;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: all 1s ;
+        }
+
+        input:checked + label + img {
+           opacity: 1;
+            transform: scale(1.0);
+        }
+
+        input:checked + label img {
+            border: 8px solid lightblue;
+            opacity: 1.0;
+            transition: all 1s;
+        }
+
+        label {
+            display: inline-block;
+            width: 134px;
+            margin:5px 8px;
+
+        }
+        label img {
+            opacity: 0.5;
+            width:134px;
+            height: 75px;
+            margin-top:500px;
+            border:8px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <input type="radio" name="carousel" id="list1" >
+        <label for="list1">
+            <img src="./images/photo1.jpg" alt="">
+        </label>
+        <img src="./images/photo1.jpg" alt="">
+
+        <input type="radio" name="carousel" id="list2" >
+        <label for="list2">
+            <!--小图片-->
+            <img src="./images/photo2.jpg" alt="">
+        </label>
+        <!--大图片-->
+        <img src="./images/photo2.jpg" alt="">
+
+        <input type="radio" name="carousel" id="list3" checked>
+        <label for="list3">
+            <img src="./images/photo3.jpg" alt="">
+        </label>
+        <img src="./images/photo3.jpg" alt="">
+
+        <input type="radio" name="carousel" id="list4" >
+        <label for="list4">
+            <img src="./images/photo4.jpg" alt="">
+        </label>
+        <img src="./images/photo4.jpg" alt="">
+
+        <input type="radio" name="carousel" id="list5" >
+        <label for="list5">
+            <img src="./images/photo5.jpg" alt="">
+        </label>
+        <img src="./images/photo5.jpg" alt="">
+
+
+    </div>
+</body>
+</html>
