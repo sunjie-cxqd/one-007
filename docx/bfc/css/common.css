@@ -1,0 +1,33 @@
+/* common */
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,dt,ul,ol,li,img,form,input{margin:0;padding:0;}
+body{font-family:"微软雅黑";font-size:12px;}
+
+li{list-style:none;}
+a{text-decoration:none;}
+img{border:none;display:block;}
+b,h1,h2,h3,h4,h5,h6{font-weight:normal;}
+i{font-style:normal;}
+input{outline:none;}
+
+.clearfix:after{content:' ';display:block;width:0;height:0;visibility:hidden;clear:both;}
+
+.nomr{margin-right:0;}
+
+@keyframes bigToNormal{
+	0%{transform:translate(-20px,0) scale(1.5);opacity:0;}
+	100%{transform:translate(0,0) scale(1.0);opacity:1;}
+}
+
+@keyframes slideDown{
+	0%{transform:translate(0,-300px);opacity:0;}
+	100%{transform:translate(0,0);opacity:1;}	
+}
+
+@keyframes leftToRight{
+	0%{transform:translate(-300px,0);opacity:0;}
+	100%{transform:translate(0,0);opacity:1;}	
+}
+
+.bigToNormal{animation:bigToNormal 1s ease-in-out;}
+.slideDown{animation:slideDown 1s ease-in-out;}
+.leftToRight{animation:leftToRight 1s ease-in-out;}

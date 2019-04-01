@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>bfc</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>	
+</head>
+<body>
+	<div class="page-all">
+		<div class="page-item item1">
+			<h1 class="bigToNormal">BFC（块级格式化上下文）和IFC（行内格式化上下文）</h2>
+		</div>
+		<div class="page-item item2">
+			<ul class="nav">
+				<li data-page='3'>渲染流程</li>
+				<li data-page='5'>渲染规则</li>
+				<li data-page='5'>上下文</li>
+				<li data-page='7'>生成新的bfc</li>
+				<li data-page='8'>bfc应用 </li>
+				<li data-page='9'>ifc</li>
+				<li data-page='10'>bfc,ifc,gfc,ffc</li>
+			</ul>
+		</div>
+		<!--<div class="page-item item3">
+			<h2>渲染流程</h2>
+			<h3>其他语言怎么写UI？</h3>
+			<p>手动创建组件，修改样式，组合</p>
+			<h3>浏览器中呢？</h3>
+			<p>html文档>文档解析>文档对象模型>加样式</p>
+			<p>组件化</p>
+			<h3>计算机屏幕上是怎么显示内容的？</h3>
+			<p>像素</p>
+			<p>数据写入到内存中的显存</p>
+		</div>----->
+       
+		<div class="page-item item4">
+			<h2>渲染规则</h2>
+			<p>1.内部的box会在垂直方向，一个接一个的放置</p>
+			<p>2.box垂直方向的距离由margin决定，属于同一个bfc的两个相邻box的margin会发生重叠</p>
+			<p>3.每个元素的margin box的左边，与包含块border box的左边相接触（对于从做往右的格式化，否则相反）</p>
+			<p>4.bfc的区域不会与float box重叠</p>
+			<p>5.bfc就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也是如此</p>
+			<p>6.计算bfc的高度时，浮动的元素也参与计算<a href="test/test1.html" target="_blank">演示</a></p>
+		</div>
+		<div class="page-item item5">
+			<h2>上下文</h2>
+			<h3>已有2个高度为100px的div，第三个高度是100px的div放在什么位置？<a href="test/test5.html" target="_blank">演示</a></h3>
+			<p>保存渲染时用到的数据</p>
+			<h3>宽度是100%是多宽？</h3>
+			<p>获取外部的数据</p>
+	
+		</div>
+		<div class="page-item item6">
+			<h2>上下文</h2>
+			<h3>渲染的流程</h3>
+			<p>文档解析成对象模型（dom），通过选择器给对应的元素加上样式，根据渲染规则渲染到显存区域</p>
+			<p>渲染过程中用到的数据通过上下文来获取</p>
+			<h3>bfc</h3>
+			<p>block formating context</p>
+			<p>渲染时用于保存临时数据和获取外部数据的容器</p>
+			<p>html是一个bfc（上下文，容器）</p>
+		</div>
+		<div class="page-item item7">
+			<h2>生成bfc</h2>
+			<p>1.根元素<p>
+			<p>2.float属性不为none（脱离文档流）</p>
+			<p>3.position为absolute或fixed</p>
+			<p>4.display为inline-block,table-cell,table-caption,flex,inine-flex</p>
+			<p>5.overflow不为visible</p>
+		</div>
+		<div class="page-item item8">
+			<h2>bfc应用</h2>
+			<p>1.自适应两栏布局 <a href="test/test2.html" target="_blank">演示</a></p>
+			<p>2.清除内部浮动 <a href="test/test3.html" target="_blank">演示</a></p>
+			<p>3.防止垂直margin重叠 <a href="test/test4.html" target="_blank">演示</a></p>
+			
+		</div>
+		<div class="page-item item9">
+			<h2>ifc</h2>
+			<p>1.ifc高度为最高的内容的高度，宽度为内容的宽度</P>
+			<p>2.水平排列</p>
+			<p>3.水平方向的margin，border，padding有效，竖直方向的margin，padding，border只有显示效果<a href="test/test6.html">演示</a></p>
+			<p>4.text-align属性可以控制ifc中元素的对齐方式</p>
+			<p>5.inline-block垂直方向可以用vertical-align来调整对齐方式</p>
+		</div>
+		<div class="page-item item10">
+			<h2>bfc,ifc,gfc,ffc</h2>
+			<p>bfc内部竖直排列，ifc内部水平排列，bfc之间水平排列</p>
+			<p>css2.1  bfc ifc</p>
+			<p>css3 gfc ffc</p>
+		</div>
+
+	</div>
+	<ul class="ctrl">
+		<li class="prev">Prev</li>
+		<li class="next">Next</li>
+	</ul>
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
