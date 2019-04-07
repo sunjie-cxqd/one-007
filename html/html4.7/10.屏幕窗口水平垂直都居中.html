@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>水平垂直都居中</title>
+<style type="text/css">
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,textarea,select,option{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: blue;
+}
+.box{
+	width: 200px;
+	height: 100px;
+	background: red;
+	/*position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -100px;
+	margin-top: -50px;*/
+
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin:auto;
+}
+
+.imgs{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin:auto;
+}
+</style>
+</head>
+<body>
+	<div class="box"></div>
+	<!-- <img class="imgs" src="img/img02.jpg"/> -->
+</body>
+</html>

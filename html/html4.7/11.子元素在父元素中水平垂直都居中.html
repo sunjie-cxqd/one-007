@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>子元素在父元素中水平垂直都居中</title>
+<style type="text/css">
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,textarea,select,option{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	width: 800px;
+	height: 500px;
+	background: black;
+	/*position: relative;*/
+
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.imgs{
+	/*position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin:auto;*/
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<img class="imgs" src="img/jia.png"/>
+	</div>
+
+	<!-- <table width="800" height="500" bgcolor="black" cellspacing="0" cellpadding="0">
+		<tr>
+			<td align="center"><img src="img/img02.jpg"/></td>
+		</tr>
+	</table> -->
+</body>
+</html>

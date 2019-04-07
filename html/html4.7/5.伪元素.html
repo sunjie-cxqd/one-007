@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>伪元素</title>
+<style type="text/css">
+.page .b_span{
+	font-size: 32px;
+	color: red;
+	font-weight: bolder;
+}
+.page .a_span{
+	font-size: 32px;
+	color: blue;
+	font-weight: bolder;
+}
+
+.word:before{
+	content: "欢迎来千锋";
+	font-size: 32px;
+	color: red;
+	font-weight: bolder;
+	width: 500px;
+	height: 100px;
+	background: black;
+	/*display: inline-block;*/
+}
+.word:after{
+	content: "毕业年薪百万";
+	font-size: 32px;
+	color: blue;
+	font-weight: bolder;
+}
+
+.art:before{
+	content: url(img/a.png);
+}
+.art:after{
+	content: url(img/b.png);
+}
+
+/*.qq:before{
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: black;
+}*/
+
+.qq:first-letter{
+	color: red;
+	font-size: 40px;
+}
+
+.qq:first-line{
+	background: greenyellow;
+}
+
+.qq::selection{
+	background: orange;
+	color: black;
+}
+</style>
+</head>
+<body>
+	<p class="page"><span class="b_span">欢迎来千锋</span>3月30日，东莞市厚街镇国际保税区，快递员张军延按响了客户家的门铃，扛起30公斤的箱子，“咚咚咚”走上七楼。个头1米8，体重200斤的张军延，走起路来带着一阵风。他说话和走路的频率，明显比身边的人要更快一些，这源于他的“职业病”，更源于他追求年薪百万的梦想。<span class="a_span">毕业年薪百万</span></p>
+	<p class="word">3月30日，东莞市厚街镇国际保税区，快递员张军延按响了客户家的门铃，扛起30公斤的箱子，“咚咚咚”走上七楼。个头1米8，体重200斤的张军延，走起路来带着一阵风。他说话和走路的频率，明显比身边的人要更快一些，这源于他的“职业病”，更源于他追求年薪百万的梦想。</p>
+	<p class="art">3月30日，东莞市厚街镇国际保税区，快递员张军延按响了客户家的门铃，扛起30公斤的箱子，“咚咚咚”走上七楼。个头1米8，体重200斤的张军延，走起路来带着一阵风。他说话和走路的频率，明显比身边的人要更快一些，这源于他的“职业病”，更源于他追求年薪百万的梦想。</p>
+	<p class="qq">3月30日，东莞市厚街镇国际保税区，快递员张军延按响了客户家的门铃，扛起30公斤的箱子，“咚咚咚”走上七楼。个头1米8，体重200斤的张军延，走起路来带着一阵风。他说话和走路的频率，明显比身边的人要更快一些，这源于他的“职业病”，更源于他追求年薪百万的梦想。</p>
+	<p class="qq">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, sapiente, illum doloremque accusantium necessitatibus beatae expedita velit reprehenderit voluptates in rem vitae delectus atque ducimus sequi. Quia, praesentium veniam soluta!</p>
+</body>
+</html>

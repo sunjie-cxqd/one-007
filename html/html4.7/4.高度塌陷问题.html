@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>高度塌陷问题</title>
+<style type="text/css">
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,textarea,select,option{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	width: 600px;
+	padding:10px;
+	background: gray;
+	margin:50px;
+	/*height: 150px;*/
+	/*overflow: hidden;*/
+}
+.child{
+	width: 200px;
+	height: 220px;
+	float: left;
+	position: relative;
+	left: 0;
+	top: -30px;
+}
+.child_one{
+	background: red;
+}
+.child_two{
+	background: yellow;
+}
+.child_three{
+	background: blue;
+}
+.clear{
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	background: green;
+}
+
+.box:after{
+	content:"";
+	display: block;
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<div class="child child_one"></div>
+		<div class="child child_two"></div>
+		<div class="child child_three"></div>
+		<!-- <div class="clear"></div> -->
+	</div>
+</body>
+</html>
