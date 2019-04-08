@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>圆角</title>
+<style type="text/css">
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,textarea,select,option{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	width: 150px;
+	height: 150px;
+	background: blue;
+	margin:20px auto;
+}
+.box1{
+	border-radius: 20px;
+}
+.box2{
+	border-radius: 75px 10px;
+}
+.box3{
+	border-radius: 75px 0 15px;
+}
+.box4{
+	border-radius: 75px 50px 25px 0;
+}
+.box5{
+	border-top-left-radius: 25px;
+	/*border-top-right-radius: 25px;*/
+	border-bottom-left-radius: 25px;
+}
+.box6{
+	border-radius: 50%;
+	/*border-radius: 100%;*/
+}
+.imgs{
+	border-radius: 50%;
+}
+
+.box7{
+	border-radius:30px/75px;
+}
+</style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4"></div>
+	<div class="box box5"></div>
+	<div class="box box6"></div>
+	<!-- <img class="imgs" src="img/bac.jpg"/>
+	<img class="imgs" src="img/ewm.gif"/> -->
+	<div class="box box7"></div>
+</body>
+</html>
