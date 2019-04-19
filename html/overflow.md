@@ -5,7 +5,7 @@
 		1.包含子元素的父元素(包含块)在ie6-会出现延伸的情况，变成可以包裹住子元素的宽度。
 		2.在ie7- 会存在另外一种情况，使用button 按钮 或者input type=button 这两种类型的按钮，都会出现
 		按钮当中字越多，按钮两边的padding越大。
-			解决:overflow:visible;
+			解决:overflow:visible（“可见”）默认;
 	hidden 隐藏
 	
 	scroll 滚动 
