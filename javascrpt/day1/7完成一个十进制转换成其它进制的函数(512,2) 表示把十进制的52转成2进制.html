@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 完成一个十进制转换成其它进制的函数(convert(512,2):表示把十进制的52转成2进制
+    function twoBer(number,scale){
+        var x=0;
+        var arr =[];
+        for(var i=0;;i++){
+             x=number%scale;
+             arr.unshift(x);
+             number=parseInt(number/scale);
+             if(number==0){
+                 return arr;
+             }
+        }
+
+    }
+    var arrtwo=twoBer(512,2);
+    for(var i in arrtwo){
+        document.write(arrtwo[i]);
+    }
+</script>

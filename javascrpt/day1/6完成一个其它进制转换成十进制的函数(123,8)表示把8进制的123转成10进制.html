@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 完成一个其它进制转换成十进制的函数(convert(123,8):表示把8进制的123转成10进制;
+    function oneBer(number,scale) {
+        var x=number.toString();
+        var sum=0;
+        for(var i=0;i<x.length;i++){
+            sum+=x[i]*Math.pow(scale,x.length-i-1);
+        }
+        return sum;
+    }
+    console.log(oneBer(123,8));
+</script>

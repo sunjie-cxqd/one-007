@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // <!--冒泡排序-->
+    function man(arr){
+        var uam;
+        for(var i=0;i<arr.length-1;i++){
+            for(var j=0;j<arr.length-i-1;j++){
+                if(arr[j]>arr[j+1]){
+                    uam=arr[j];
+                    arr[j]=arr[j+i];
+                    arr[j+i]=uam;
+                }
+            }
+        }
+        return arr;
+    }
+    var arr0=[8,5,2,1,4,7,9,6,3];
+    man(arr0);
+    for(var i in arr0){
+        document.write(arr0[i]+",");
+    }
+</script>

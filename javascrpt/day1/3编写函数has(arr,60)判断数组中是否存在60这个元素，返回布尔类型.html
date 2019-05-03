@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    <!-- 编写函数has(arr,60)判断数组中是否存在60这个元素，返回布尔类型-->
+    function has(arr,n){
+        var judge=false;
+        for(var i=0;i<arr.length;i++){
+            if(arr[i] == n){
+                judge=true;
+                break;
+            }
+        }
+        return judge;
+    }
+    var arr=[10,20,30,60];
+    console.log(has(arr,60));
+</script>

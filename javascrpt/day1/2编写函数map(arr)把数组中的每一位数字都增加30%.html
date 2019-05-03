@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    <!--编写函数map(arr)把数组中的每一位数字都增加30%。-->
+    //18.首先给予var一个数组；var arr=[7,2,15,12,9]
+    //19.编写一个函数为map(arr);function map(arr){}
+    //20.由于每一组中的数字都要增加30%，所以需要一个for循环来执行；
+    //21.每个数字增加30% ，同时输出数组arr
+    //23.返回值 arr;
+    //25.控制台输出map(arr)；这样可以在console控制台里输出一个每个数字都增加30%的数组；
+    var arr=[7,2,15,12,9]
+    function map(arr){
+        for(var i=0;i<arr.length;i++){
+            arr[i]*=(1+0.3);
+        }
+        return arr;
+    }
+    console.log(map(arr));
+</script>

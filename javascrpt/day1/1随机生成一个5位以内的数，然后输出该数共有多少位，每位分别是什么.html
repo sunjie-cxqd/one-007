@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+<!--创建一个数组,给元素赋值1到100-->
+    // function testf() {
+    //     var arr =[];
+    //     for(var i=0;i< 100;i++){
+    //         arr.push(i+1);
+    //     }
+    //     console.log(arr);
+    // }
+    // testf();
+
+
+<!--随机生成5位以内的数，然后输出该数字有多少位，每位分别是什么-->
+//函数名：randomFiveNumber;  (参数：无;  (作用：随机生成一个5位以内的数，然后输出该数共有多少位，每位分别是什么;
+//28.创建一空数组；
+//29.产生5位的随机整数（parseInt整数)，生成的数为Number;
+//30.转化为String(字符串)，就可以用String的length(下标长度)进行分割；
+    function randomFiveNumber(){
+        var arr =[ ];
+        var iRandomOne=parseInt(Math.random()*100000);
+        var sRandomOne=String(iRandomOne);
+        for(var i=0;i<sRandomOne.length;i++){
+            arr.push(sRandomOne[i]);
+        }
+        console.log("生成的随机数:"+ iRandomOne);
+        console.log("位数:"+sRandomOne.length);
+        for(var i=0;i<arr.length;i++){
+            console.log("第"+(i+1)+"个"+ arr[i]);
+        }
+}
+    randomFiveNumber();
+</script>
