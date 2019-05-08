@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象and小老虎跳一跳</title>
+    <style>
+            #box{
+                height: 100px;
+                width: 100px;
+                background: url("img/1.jpg");
+                position: absolute;
+                top: 500px;
+                left: 150px;
+            }
+    </style>
+
+
+    <!--//事件：对某个元素的某种操作-->
+    <!--事件对象：当某个事件触发时产生的对象，就是事件对象。-->
+    <!--event 使用前提，必须有事件(不同的对象产生的事件不同。)-->
+    <!--事件对象的兼容：var e = evt || event;-->
+
+
+</head>
+<body>
+    <div id="box" onclick="tiao()">
+
+    </div>
+</body>
+</html>
+<script>
+
+    // DEMO:
+    //     document.onkeyup = function (evt) {
+    //         var e = evt || event;
+    //         alert(e);
+    //     }
+
+    //课堂案例： 小老虎跳一跳
+    var a =document.getElementById("box");
+    function tiao() {
+        a.style.top = a.offsetTop - 200 + "px";
+        setTimeout(function () {
+            a.style.top = "500px";
+        },2000);
+    }
+</script>

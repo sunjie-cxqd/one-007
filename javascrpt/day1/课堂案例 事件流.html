@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #father{
+            height: 100px;
+            width: 100px;
+            border: 1px solid red;
+        }
+        #son{
+            height: 400px;
+            width: 400px;
+            border: 1px solid red;
+        }
+    </style>
+    <!--//当某个事件执行时，从子元素向父元素触发 或 从父元素向子元素触发 称为事件流-->
+    <!--事件流的两种模式：-->
+    <!--事件冒泡:从子元素向父元素触发->当某个事件触发时，同样的事件会向父元素触发。-->
+    <!--不是所有事件都会产生冒泡问题onfocus onblur onload 不会产生冒泡问题-->
+    <!--事件捕获:从父元素向子元素触发-->
+</head>
+<body>
+    <div id="father">
+        <div id="son">
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    //文档结构:window document body body (f) (s) 元素；
+    var f =document.getElementById("father");
+    var s =document.getElementById("son");
+    window.onclink=function () {
+        alert("window被点击");
+    }
+    document.onclick = function () {
+        alert("document被点击");
+    }
+    document.body.onclick = function(){
+
+    }
+    f.onclick = function () {
+        alert("f被点击");
+    }
+    s.onclick = function () {
+        alert("s被点击");
+    }
+</script>

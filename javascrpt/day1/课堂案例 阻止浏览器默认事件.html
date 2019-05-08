@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+/*#box{*/
+    /*height: 100px;*/
+    /*width: 100px;*/
+    /*!*background: red;*!      一、*/
+    /*position: absolute;*/
+/*}*/
+
+
+
+    </style>
+    <!--e.preventDefault?e.preventDefault():e.returnValue = false;-->
+    <!--return false;-->
+    <!-- 一、阻止鼠标右键-->
+    <!-- 二、阻止超链接-->
+</head>
+<body>
+<!--<div id="box">-->
+                              <!-- 一、-->
+<!--</div>-->
+
+<a href="htpp://www.baidu.com">点击跳转</a>
+
+</body>
+</html>
+<script>
+    // var a =document.getElementById("box");// 一、阻止鼠标右键
+    // //单击右键 控制div的位置
+    // document.oncontextmenu = function (evt) {
+    //     // console.log("good");
+    //      var e = evt || event;
+    //     a.style.left = e.pageX + "px";
+    //     a.style.top = e.pageY + "px";
+    //     // e.preventDefault?e.preventDefault():returnValue =false;
+    //     // return false;
+    // }
+
+    var a = document.getElementsByTagName("a")[0];
+    a.onclick = function(){
+        alert("000");
+        return false;
+    }
+</script>

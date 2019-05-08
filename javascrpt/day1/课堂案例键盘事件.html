@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--keyUp: 用户释放某一个按键时发生-->
+    <!--keyDown: 用户按下按键时发生-->
+    <!--keyPress: 用户按下按键，并且产生一个字符时发生（按ctrl这样的键没有效果）-->
+    <!--keyCode:获取键盘按键值 （字母对应其ASCII值识别）例如：A:65 a:97 回车:13-->
+    <!--键盘检测兼容写方法 var key = e.keyCode||e.which||e.charCode;-->
+</head>
+<body>
+</body>
+</html>
+<script>
+    // (注意:keyPress的ctrl+回车返回值为10)
+    // onkeypress 键盘上某个按键被按下并松开
+    document.onkeypress = function (evt) {
+        var e = evt || event;
+        if(e.keyCode==13||e.keyCode==10 && e.crtlKey){
+            alert("发送");
+        }
+    }
+    // ctrlKey:返回当事件被触发时，“ctrl”是否被按下，返回值为true 或 false
+</script>

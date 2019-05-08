@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>鼠标事件对象的属性</title>
+    <!--坐标属性:-->
+    <!--         pageX / pageY     相对于整个文档顶部和左侧的坐标（常用）-->
+    <!--        clientX / clientY   相对于局部窗口的左侧和顶部的坐标-->
+    <!--        offsetX / offsetY   相对于内部元素的距离左侧和顶部的坐标（常用于拖拽）-->
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 1000px;
+        }
+        #box{
+            height: 200px;
+            width: 200px;
+            border: 1px solid #000000;
+            position: absolute;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+</html>
+<script>
+    document.onclick = function (evt){
+        var e = evt || event;
+        console.log("client" + e.clientX + "," + e.clientY);//只记录当前的局部页面算
+        console.log("page" + e.pageX + "," + e.pageY);//从document页面算起...习惯上用page
+        console.log("offset" + e.offsetX + "," + e.offsetY);
+    }
+</script>

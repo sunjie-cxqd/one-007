@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--onmousedown 鼠标按钮被按下-->
+    <!--pageX / pageY  相对于整个文档顶部和左侧的坐标   常用-->
+    <style>
+        #box{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background: url("img/2.jpg");
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+<script>
+    document.onmousemove = function (evt) {
+        //获取实参；
+        var a =evt || event;//事件对象的兼容；
+        var xy = document.getElementById("box");//操作图片X和Y的位置；
+        xy.style.left = a.pageX - box.offsetWidth/2 + "px";
+        xy.style.top = a.pageY - box.offsetHeight/2 + "px";
+    }
+</script>

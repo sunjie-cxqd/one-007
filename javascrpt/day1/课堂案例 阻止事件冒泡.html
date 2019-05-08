@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+ ul{
+     display: none;
+ }
+    </style>
+    <!--e.stopPropagation();通过事件对象调用 阻止事件冒泡-->
+    <!--e.stopPropagation?-->
+    <!--e.stopPropagation():e.cancelBubble = true;-->
+</head>
+<body>
+    <button id="open">按钮</button>
+    <ul id="list">
+        <li>大娃</li>
+        <li>二娃</li>
+        <li>三娃</li>
+    </ul>
+</body>
+</html>
+<script>
+    var open = document.getElementById("open");
+    var ul =document.getElementById("list");
+    open.onclick = function (evt) {
+        var e = evt || event;//阻止冒泡 时间冒泡的兼容
+
+        e.stopPropagation? e.stopPropagation():e.cancelBubble = true;//1.（三目运算）函数为真
+        document.write(e.stopPropagation);
+        //阻止冒泡
+        // e.stopPropagation();//2.
+        // ul.style.display = "block";
+    }
+    document.onclick = function () {
+        ul.style.display = "none";
+    }
+</script>
