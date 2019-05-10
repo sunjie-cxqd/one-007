@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>密码强度判断</title>
+    <!--密码的强度5类
+    1 一种类字符(弱) 比如 纯数字、纯字母、纯符号（特殊字符）
+    2.两种类字符(较弱)比如 数字加字母、数字加符号、字母加符号
+    3.三种类字符(强) 三种相加
+    -->
+</head>
+<body>
+    <input type="text" id="txt">
+    <input type="button" id="btn" value="请验证">
+</body>
+</html>
+<script>
+    var txt = document.getElementById("txt");
+    var btn = document.getElementById("btn");
+    var RegNum = /\d+/;
+    var RegZm = /[a-zA-Z]+/;    //字符串中至少包含一种
+    var RegTf = /[!@#$%]+/;
+
+    var regNum = /^\d+$/;
+    var regZm = /^[a-zA-Z]+$/;  //一类；
+    var regTf = /^[!@#$%]+$/;
+    btn.onclick = function () {
+        var str = txt.value;
+        
+        if(regNum.test(str) || regTf.test(str) || regZm.test(str)){
+            alert("这密码还不行");
+        }else if (RegNum.test(str) && RegTf.test(str) && RegZm.test(str)) {
+            alert("这密码可以");
+        }else {
+            alert("这密码还行");
+        };
+    }
+</script>

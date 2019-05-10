@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+</head>
+<body>
+<form>
+
+    <!--1.-->
+    <!--<form action="ok.html" method="get" id="mf">-->
+        <!--姓名:<input type="text" name="username" id="tname"></br>-->
+        <!--密码:<input type="text" name="userpwd"  id="tpwd"></br>-->
+        <!--<input type="submit" value="登录"/>-->
+    <!--</form>-->
+
+
+    <!--焦点验证form-->
+    <form action="ok.html" method="get" id="mf">
+        姓名:<input type="text" name="username" id="tname"><span id="ts"></span></br>
+        密码:<input type="text" name="userpwd"  id="tpwd"><span id="tp"></span></br>
+        <input type="submit" value="登录"/>
+    </form>
+</form>
+</body>
+</html>
+<script>
+
+    //表单验证；
+// var mf = document.querySelector("#mf");
+// var tname = document.getElementById("tname");
+// var tpwd = document.getElementById("tpwd");
+//
+// mf.onsubmit = function(){
+// var regName = /^laowang$/;
+// var regPwd = /^123456$/;
+// var strName = tname.value;
+// var strPwd = tpwd.value;
+//
+// if(!regName.test(strName)){
+// alert("用户名不合法");
+// return false;
+// }
+//
+// if(!regPwd.test(strPwd)){
+// alert("密码不合法");
+// return false;
+// }
+//
+// return true;
+// }
+
+
+
+    //焦点验证
+    var mf = document.querySelector("#mf");
+    var tname = document.getElementById("tname");
+    var tpwd = document.getElementById("tpwd");
+    var ts = document.querySelector("#ts");
+    var tp = document.querySelector("#tp");
+
+    var regName = /^laowang$/;
+    var regPwd = /^123456$/;
+    var flagName = false;
+    var flagPwd = false;
+
+    tname.onblur = function(){
+        var str = tname.value;
+
+        if(!regName.test(str)){
+            ts.innerHTML = "用户名不合法";
+            flagName = false;
+        }else{
+            ts.innerHTML = "用户名合法";
+            flagName = true;
+        }
+    }
+
+    tpwd.onblur = function(){
+        var str = tpwd.value;
+
+        if(!regPwd.test(str)){
+            tp.innerHTML = "密码不合法";
+            flagPwd = false;
+        }else{
+            tp.innerHTML = "密码名合法";
+            flagPwd = true;
+        }
+    };
+
+    mf.onsubmit = function(){
+        if(flagName && flagPwd){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+
+</script>

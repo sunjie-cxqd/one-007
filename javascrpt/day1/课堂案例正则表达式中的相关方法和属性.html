@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则中方法和属性</title>
+
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    //正则中的相关方法：
+    //test()检验一个字符串是否符合某一个正则规范，如果符合返回true,否则false
+    //用法:reg.test(str);
+
+    // exec根据正则表达式查找，结果满足返回一个长度为1的数组（数组只有一个值）
+    // 用法:reg.exec(str)
+    // var reg = /^\d/;///\d/g
+    // var str = "123456789";
+    // var arr = reg.exec(str);
+    // console.log(reg.exec(str)[0]);
+    // console.log(reg.exec(str)[0]);
+    // console.log(reg.exec(str)[0]);
+    // console.log(reg.exec(str)[0]);
+
+    //lastIndex : 这个属性记录的就是下一次捕获从哪个索引开始。
+    // var reg = /\d/g;
+    // var str = "92a345a678a9";
+    // console.log(reg.exec(str));
+    // console.log(reg.lastIndex);
+    //
+    // console.log(reg.exec(str));
+    // console.log(reg.lastIndex);
+    //
+    // console.log(reg.exec(str));
+    // console.log(reg.lastIndex);
+    //
+    // console.log(reg.exec(str));
+    // console.log(reg.lastIndex);
+
+    // g 全局  i忽略字母大小写
+
+    //正则表达式中相关字符串的方法：
+    // searc方法 返回与正则表达式查找内容匹配的第一个子字符串的位置
+    // 用法:str.search(reg)
+    // 说明：如果找到则返回子字符至开始处的偏移位，否则返回-1
+    // var r,re ；//变量声明
+    // var s = "The rain in spain falls mainly in the plain";
+    // re = /falls/i;//创建正则表达式模式；
+    // se2 = /tom/i;
+    // r = s.search(re);
+    // r = s.search(re2);
+    // document.write("r":"+ r +" : r2: " + r2");//返回Boolean结果。
+
+    // match 方法
+    使用正则表达式模式对字符串执行查找，并将包含查找的结果作为数组返回。
+str.match(rgExp)
+
+    var reg = /\d+/g;
+    var str = "123a4356a987";
+    console.log(str.match(reg));
+
+    replace 方法
+    返回根据正则表达式进行文字替换后的字符串的复制。
+stringObj.replace(rgExp, replaceText)
+
+    var reg = /laowang/g;
+    var str = "laowang的隔壁也住着laowang";
+    console.log(str.replace(reg,"dahuang"));
+
+
+    </sript>
