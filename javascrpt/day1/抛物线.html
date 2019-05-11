@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+
+	<script>
+		
+	window.onload = function(){
+
+		//y = ax*x + bx + c ;
+
+		//通过已知公式可以通过x值求得a值;
+
+		var box = document.getElementById("box");
+
+		var target = document.getElementById("target");
+
+		//曲率 >> 可以观察改变a的值会发生什么事情;
+
+
+		//目标点的相对坐标; 
+
+		var a = 0.008;
+ 
+		var coord = {
+
+			x : target.offsetLeft - box.offsetLeft,
+			y :  target.offsetTop - box.offsetTop
+
+		}
+
+		//求系数b
+		//y = ax*x + bx + 0
+
+		//bx = y - a*x*x 
+
+		//公式为; b = (y - a*x*x) / x ; 
+
+		var b = (coord.y - a * coord.x * coord.x) / coord.x;
+
+		//原点坐标;
+
+		var center = {
+
+			x : box.offsetLeft,
+			y : box.offsetTop
+
+		}
+
+		var speed = 1;
+		var offsetX = 0;//在坐标轴上移动的值
+		var timer = setInterval(function(){
+			//console.log(box.offsetLeft)
+			box.style.left = center.x + (offsetX += speed) + "px";
+			box.style.top = center.y + (a * offsetX * offsetX + b*offsetX) + "px";
+
+			if(offsetX >= coord.x){
+
+					box.style.left = target.offsetLeft + 'px';
+					box.style.top = target.offsetTop + 'px';
+					clearInterval(timer);
+			}
+
+			//轨迹;
+			var div = document.createElement('div')
+			div.className = "box";
+			div.style.left = center.x + (offsetX += speed) + "px";
+			div.style.top = center.y + (a * offsetX * offsetX + b*offsetX) + "px";
+
+			document.getElementsByTagName("body")[0].appendChild(div);
+
+		},30)
+
+	}
+
+	</script>
+	<style>
+
+		*{
+			margin: 0;
+			padding: 0;	
+		}
+		.box{
+			width: 2px;
+			height: 2px;
+			background: #000;
+			position: absolute;
+		}
+		
+		#box{
+
+			width: 30px;
+			height: 30px;
+			background: red;
+			position: absolute;
+			left: 100px;
+			top: 500px;
+
+
+		}
+		
+		#target{
+
+			width: 30px;
+			height: 30px;
+			background: #000;
+			position: absolute;
+			left: 700px;
+			top: 300px;
+
+
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="target"></div>
+</body>
+</html>
