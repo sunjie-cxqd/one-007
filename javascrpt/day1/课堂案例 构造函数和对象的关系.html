@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数和对象的关系</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    //a.普通构造方法
+    //function Student(name,id,score){
+    // this.name = name;//通过this指针，来对属性与行为进行绑定
+    // this.id = id;
+    // this.score = score;
+    // this.showInfor = function(){
+    // document.write("我就是隔壁老王:"," + "" + this.name + "" + this.id +""+ this.score);
+    //      }
+    // }
+
+    //let对象名 = new构造方法(形参)；
+
+    // var s = new Student(1,"老王",1);
+    // s.showInfor();
+    // var s1 = new Student(2,"小明",2);
+    // s1.showInfor();
+
+
+
+
+
+    //b.Es6构造方法
+    //类的定义：
+    // class 类名{
+    //     类体：
+                //构造方法中通过this添加属性
+                //普通方法不要加this
+    // }
+    // class Student{
+    //     constructor(id,name){
+    //         this.id = id;
+    //         this.name = name;
+    //     }
+    //     showValue(){
+    //         console.log(this.id + "," + this.name);
+    //     }
+    // }
+    // var s = new Student(1,"老王");
+    // s.showValue();
+    // var s1 = new Student(2,"小明");
+    // s1.showValue();
+
+
+
+
+    //c.使用JSON创建对象
+    //var s = {"id":"123","name":"456","showValue":function(){
+    //          document.write(this.id +‘:’+ this.name);
+    //          }
+    // };
+    //s.showValue();
+
+</script>

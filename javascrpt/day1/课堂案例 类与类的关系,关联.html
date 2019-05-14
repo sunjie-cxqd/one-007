@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类， 关联</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+
+    //关联关系：
+    //对象和对象之间的连接。在面向对象中，关联关系的代码表现形式为一个类的
+    //对象做为另一个类的属性类型存在。
+    //即“有”的关系：“has-a”。
+
+    //例子;
+    //创建一个类，添加属性和行为
+    class Birthday{
+        constructor(newY,newM,newD){
+            this.y = newY;
+            this.m = newM;
+            this.d = newD;
+        }
+        showValue(){
+            console.log(this.y,this.m,this.d);
+        }
+    }
+    class friends{
+        constructor(newName,newBir){
+            this.name = newName;
+            // this.y = newY;
+            // this.m = newM;
+            // this.d = newD;
+            this.bir = newBir;
+        }
+       showValue(){
+            console.log(this.name);
+            this.bir.showValue();
+        }
+    }
+    let bir = new Birthday(0000,00,00);
+    let f = new friends("艾斯",bir);
+    f.showValue();
+
+
+</script>

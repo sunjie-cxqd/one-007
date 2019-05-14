@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>普通构造方法</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    
+    //构造函数（类）定义
+    // 列子：
+    function fruits(newName,newSweet) {
+        this.name = newName;//添加name属性;
+        this.sweet = newSweet;//添加sweet属性；
+        this.eat = function () {
+            console.log("eat()");
+        }
+        this.showValue = function () {
+            console.log(this.name,this.sweet);
+        }
+    }
+    //对象的创建
+    let fru1 = new fruits("apple","超甜");//"类"
+    // fru1.name = "红富士之红苹果";
+    // console.log(fru1.name,fru1.sweet);
+    // fru1.eat();
+    fru1.showValue();
+    let fru2 = new fruits("banana","特甜");
+    // fru2.name = "猴子最爱之大蕉蕉";
+    // console.log(fru2.name,fru2.sweet);
+    // fru2.eat();
+    fru2.showValue();
+</script>

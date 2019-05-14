@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    class Poker{
+        constructor(newColor,newNum){
+            this.color = newColor;
+            this.num = newNum;
+        }
+    }
+    class Hand{
+        constructor(newCard){
+            this.card = newCard;
+        }
+    }
+    class DaMing{
+        constructor(leftHand,rightHand){
+            this.lhand = leftHand;
+            this.rhand = rightHand;
+        }
+
+    show(){
+        console.log(this.lhand.card.color,this.lhand.card.num);
+        console.log(this.rhand.card.color,this.rhand.card.num);
+    }
+    swap(){
+        let t;
+        t = this.lhand.card;
+        this.lhand.card = this.rhand.card;
+        this.rhand.card = t;
+         }
+    }
+
+    let poker1 = new Poker("红桃","A");
+    let poker2 = new Poker("黑桃","K");
+
+    let hand1 = new Hand(poker1);
+    let hand2 = new Hand(poker2);
+
+    let DM = new DaMing(hand1,hand2);
+    DM.show();
+    DM.swap();
+    DM.show();
+
+
+
+
+</script>

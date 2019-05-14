@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Json创建对象</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+
+    var s = {"id":"123",
+            "name":"456",
+            "showValue":function () {
+                    document.write(this.id + ':' + this.name);
+                 }
+             };
+
+    s.showValue();
+</script>

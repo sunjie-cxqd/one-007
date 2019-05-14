@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Es6的构造方法</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+        class Student{
+            //构造方法
+            constructor(newName,newAge){
+                this.name = newName;
+                this.age = newAge;
+            }
+            eat(){
+                console.log(this.name + "eat");
+            }
+        }
+
+        let stu1 = new Student("laowang","18");
+        console.log(stu1.name,stu1.age);
+        stu1.eat();
+</script>

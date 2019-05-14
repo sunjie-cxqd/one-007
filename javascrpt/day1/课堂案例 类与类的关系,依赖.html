@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类，依赖</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+
+    //依赖关系（use-a）
+    //指一个类A使用到了另一个类B
+    //依赖关系的特性
+    //这种关系是具有 偶然性的、临时性的、非常弱的，但是类B的变化会影响到类A。
+
+    //有一辆car小汽车行驶在一条公路上，计算这辆小汽车以60km/小时的速度，行驶1000km需要多久。
+    //面对对象分析问题的思路：
+    // 1.分析问题 找出该类有几个对象
+    // 2.抽象出对象的方法和属性，设计类
+    // 3.按顺序调用各个对象
+
+    class Car{
+        constructor(newSpeed){
+            this.speed = newSpeed;
+        }
+        time(newt){//依赖；
+            return newt.length/this.speed;
+        }
+    }
+    class Road{
+        constructor(newLength){
+            this.length = newLength;
+        }
+    }
+    let car = new Car(60);
+    let road = new Road(1000);
+    console.log(car.time(road));
+
+
+
+
+
+
+</script>
