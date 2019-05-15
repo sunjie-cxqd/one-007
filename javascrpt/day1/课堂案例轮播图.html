@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+</head>
+<style>
+    #oImg{
+        width: 500px;
+        height: 300px;
+        background: url("img/0.jpg")no-repeat;
+        background-size: 500px 300px;
+        margin: 50px auto;
+        position: relative;
+    }
+    #btn0{
+        width: 30px;
+        height: 300px;
+        position: absolute;
+        opacity: 0.2;
+        border: none;
+        font-weight: bold;
+    }
+    #btn1{
+        width: 30px;
+        height: 300px;
+        position: absolute;
+        opacity: 0.2;
+        border: none;
+        font-weight: bold;
+        left: 470px;
+    }
+    li{
+        list-style: none;
+        width: 15px;
+        height: 15px;
+        background: darkturquoise;
+        border-radius: 50%;
+        margin: 10px;
+        float: left;
+    }
+    ul{
+        position: absolute;
+        left: 130px;
+        top: 240px;
+    }
+</style>
+<body>
+<div id="oImg">
+    <input id="btn0" type="button" value="<">
+    <input id="btn1" type="button" value=">">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+
+    class FantasyCard {
+        //设置构造方法 参数1：图片数组; 参数2：li;参数3：div块
+        constructor(newImg, newLi, newDiv) {
+            this.img = newImg;
+            this.oli = newLi;
+            this.odiv = newDiv;
+            this.index = 0;
+            this.oli[this.index].style.background = "black";
+            this.odiv.style.background = "url(img/" + this.index + ".jpg)";
+        }
+
+        //设置li此时背景颜色的状态
+        LiColor() {
+            for (let i = 0; i < this.oli.length; i++) {
+                if (i == this.index) {
+                    this.oli[i].style.background = "black";
+                } else {
+                    this.oli[i].style.background = "darkturquoise";
+                }
+            }
+        }
+
+        //设置div此时背景颜色的状态
+        DivColor() {
+            this.odiv.style.background = "url(img/" + this.index + ".jpg)";
+        }
+
+        //下一个方向的图片；
+        nextImage() {
+            this.index++;
+            if (this.index == this.oli.length) {
+                this.index = 0;
+            }
+            this.LiColor();
+            this.DivColor();
+        }
+
+        //之前方向的图片；
+        previousImage() {
+            this.index--;
+            if (this.index == -1) {
+                this.index = 4;
+            }
+            this.DivColor();
+            this.LiColor();
+        }
+
+        //事件绑定按钮；
+        eventBindBtn() {
+            let btn0 = document.getElementById("btn0");
+            let btn1 = document.getElementById("btn1");
+            let that = this;
+            btn0.onclick = function () {
+                that.previousImage();
+            }
+            btn1.onclick = function () {
+                that.nextImage();
+            }
+        }
+
+        //事件绑定li;
+        eventBindLi() {
+            for (let i = 0; i<oli.length; i++) {
+                let that = this;
+                this.oli[i].onclick = function () {
+                    that.index = i;
+                    that.LiColor();
+                    that.DivColor();
+                }
+            }
+        }
+    }
+let oli = document.getElementsByTagName("li");
+let odiv = document.getElementById("oImg");
+let jp = new FantasyCard(["0.jpg","1.jpg","2.jpg","3.jpg","4.jpg"],oli,odiv);
+jp.eventBindBtn();
+jp.eventBindLi();
+</script>

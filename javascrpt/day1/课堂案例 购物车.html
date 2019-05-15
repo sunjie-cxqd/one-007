@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <style>
+        table{
+            width: 50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 2px solid lightpink;
+            position: relative;
+        }
+        th{
+            background: lightblue;
+            height: 3rem;
+            margin: 0 auto;
+        }
+        tr{
+            height: 3.5rem;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <table border="">
+        <tr>
+            <th>欢迎惠顾</th>
+            <th>数量</th>
+            <th>单价</th>
+            <th>小计</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>爱丽丝的梦</td>
+            <td><button>-</button><span class="best_num"> 00 </span><button>+</button></td>
+            <td>单价:<span class="best_price"> 09 </span></td>
+            <td>小计:<span class="best_single"> 00 </span></td>
+            <td>操作: <input type="button"class = "del" value="清除"> 00 </button></td>
+        </tr>
+        <tr>
+            <td>佩奇单车</td>
+            <td><button>-</button><span class="best_num"> 00 </span><button>+</button></td>
+            <td>单价:<span class="best_price"> 08 </span></td>
+            <td>小计:<span class="best_single"> 00 </span></td>
+            <td>操作: <input type="button"class = "del" value="清除"> 00 </button></td>
+        </tr>
+        <tr>
+            <td>可达鸭</td>
+            <td><button>-</button><span class="best_num"> 00 </span><button>+</button></td>
+            <td>单价:<span class="best_price"> 07 </span></td>
+            <td>小计:<span class="best_single"> 00 </span></td>
+            <td>操作: <input type="button" class = "del" value="清除"> 00 </button></td>
+        </tr>
+        <tr>
+            <td>夏日友人帐</td>
+            <td><button>-</button><span class="best_num"> 00 </span><button>+</button></td>
+            <td>单价:<span class="best_price"> 06 </span></td>
+            <td>小计:<span class="best_single"> 00 </span></td>
+            <td>操作: <input type="button" class = "del" value="清除"> 00 </button></td>
+        </tr>
+        <tr>
+            <td>21B星球问候</td>
+            <td><button>-</button><span class="best_num"> 00 </span><button>+</button></td>
+            <td>单价:<span class="best_price"> 05 </span></td>
+            <td>小计:<span class="best_single"> 00 </span></td>
+            <td>操作: <input type="button" class = "del" value="清除"> 00 </button></td>
+        </tr>
+        <tr>
+            <td colspan="5">一共<span id="best_total"> 00 </span>种欢乐 ，共计花费<span id="best_total_price"> 00 </span>魔法币哦！</td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    class Cart {
+        constructor() {
+        }
+            //总共购物车有多少个商品
+            getBestNumAndUpdate()
+            {
+                let oBest_num = document.getElementsByClassName("best_num");
+                let bestTotalNum = 0;
+                for (let i = 0; i < oBest_num.length; i++) {
+                    bestTotalNum += Number(oBest_num[i].innerHTML);
+                }
+                let oBestTotalNum = document.getElementById("best_total");
+                oBestTotalNum.innerHTML = bestTotalNum;
+            }
+            //所有商品花了多少钱
+            getBestPriceAndUpdate()
+            {
+                let oBestprice = document.getElementsByClassName("best_single");
+                let bestTotalPrice = 0;
+                for (let i = 0; i < oBestprice.length; i++) {
+                    bestTotalPrice += Number(oBestprice[i].innerHTML);
+                }
+                let oBestTotalPrice = document.getElementById("best_total_price");
+                oBestTotalPrice.innerHTML = bestTotalPrice;
+            }
+            //计算每个单独商品的小计
+            getBestSinglePrice(num, price)
+            {
+                return num * price;
+            }
+            //增加货物
+            bestPlus(btn)
+            {
+                //通过this找到数量
+                let oBestNum = btn.previousElementSibling;
+                oBestNum.innerHTML = (Number(oBestNum.innerHTML)) + 1;
+                let oBestPrice = btn.parentNode.nextElementSibling.firstElementChild;
+                //小计
+                let bestSinglePrice = this.getBestSinglePrice(oBestNum.innerHTML, oBestPrice.innerHTML);
+                let oBestSinglesPrice = btn.parentNode.nextElementSibling.nextElementSibling.firstElementChild;
+                oBestSinglesPrice.innerHTML = bestSinglePrice;
+                this.getBestNumAndUpdate();
+                this.getBestPriceAndUpdate();
+            }
+            //减少货物
+            bestMin(btn)
+            {
+                //通过this找到数量
+                let oBestNum = btn.nextElementSibling;
+                if (oBestNum.innerHTML > 0) {
+                    oBestNum.innerHTML = (Number(oBestNum.innerHTML)) - 1;
+                    let oBestPrice = btn.parentNode.nextElementSibling.firstElementChild;
+                    //小计
+                    let bestSinglePrice = this.getBestSinglePrice(oBestNum.innerHTML, oBestPrice.innerHTML);
+                    let oBestSinglesPrice = btn.parentNode.nextElementSibling.nextElementSibling.firstElementChild;
+                    oBestSinglesPrice.innerHTML = bestSinglePrice;
+                    this.getBestNumAndUpdate();
+                    this.getBestNumAnddate();
+                }
+            }
+            //删除货物
+            bestDel(btn)
+            {
+                let tr = btn.parentNode.parentNode;
+                tr.remove();
+                this.getBestNumAndUpdate();
+                this.getBestPriceAndUpdate();
+            }
+            //事情绑定
+            eventBind()
+            {
+                let btn = document.getElementsByTagName("button");
+                let that = this;
+                let btnDel = document.getElementsByClassName("del");
+                for (let i = 0; i < btn.length; i++) {
+                    if (i % 2 == 0) {
+                        btn[i].onclick = function () {
+                            that.bestMin(this);
+                        }
+                    } else {
+                        btn[i].onclick = function () {
+                            that.bestPlus(this);
+                        }
+                    }
+                }
+                for (let i = 0; i < btnDel.length; i++) {
+                    btnDel[i].onclick = function () {
+            that.bestDel(this);
+        }
+    }
+    }
+    }
+   let c = new Cart();
+    c.eventBind();
+</script>
