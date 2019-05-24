@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>AjaxPost</title>
+	</head>
+	<body>
+		
+		<input type = "text" name = "username" id = "t1">
+		<span id="s"></span><br>
+		<input type = "text" name = "pwd">
+		
+	</body>
+</html>
+<script>
+	
+	let t1 = document.getElementById("t1");
+	let s = document.getElementById("s");
+	t1.onblur = function(){
+		//1.创建对象
+		let xhr = new XMLHttpRequest();
+		//2.设置连接地址		get方式发送响应
+		xhr.open("post","AjaxPostphp.php","true");
+		//老师说这句话必须抄 post 的请求头
+		xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		//3.设置响应事件
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4 && xhr.status == 200){
+				//5.获取响应字符串
+				if(xhr.responseText == "1"){
+					s.innerHTML = "用户名已存在，请重新注册";
+				}else{
+					s.innerHTML = "恭喜注册成功";
+				}
+			}
+		}
+		//4.发送   通过send传递参数
+		//多个参数依然用&组装 "user_name="+ userName + "&user_age="+ userAge;
+		xhr.send("username=" + t1.value);
+	}
+	
+</script>

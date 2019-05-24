@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用户重复注册案例AjaxGet</title>
+	</head>
+	<body>
+		<input type = "text" name = "username" id = "tex" >
+		<span id="sp"></span><br>
+		<input type = "text" name = "pwd" >
+	</body>
+</html>
+<script type="text/javascript">
+	
+let tex = document.getElementById("tex");
+let sp = document.getElementById("sp");
+ tex.onblur = function(){
+	 //1.创建对象
+	 let xhr = new XMLHttpRequest();
+	 //2.设置连接地址		get方式发送响应
+	 //“注意大黄说这部贼关键”
+	 xhr.open("GET","AjaxGet.php?username="+tex.value,"true");
+	  //3.设置响应事件
+	 xhr.onreadystatechange = function () {
+	  	//5.获取响应字符串
+		//注意:前后端分离
+		if(xhr.responseText == "1"){
+			sp.innerHTML = "用户名已存在，请重新注册";
+		}else{
+			sp.innerHTML = "恭喜注册成功";
+		 }
+	 }
+	 //4.发送
+	 xhr.send();
+ }
+</script>

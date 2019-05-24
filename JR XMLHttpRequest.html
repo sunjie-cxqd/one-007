@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>XMLHttpRequest对象的兼容</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	
+	let xhr;
+	if(window.ActiveXObject){
+		//ie
+		xhr = new ActiveXObject("Microsoft.XMLHttp");
+	}else{
+		//非 ie
+		xhr = new XMLHttpRequest();
+	}
+
+	
+</script>
